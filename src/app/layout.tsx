@@ -5,7 +5,7 @@ import { CartProvider } from '../components/Cart/CartProvider';
 import { ThemeProvider } from '../context/ThemeContext';
 import { AuthProvider } from '../context/AuthContext';
 import { LanguageProvider } from '../context/LanguageContext';
-import Navbar5 from '../components/Navbar/Navbar5';
+import Navbar1 from '../components/Navbar/Navbar1';
 import Footer1 from '../components/Footer/Footer1';
 import FloatingCartBox from '../components/Cart/FloatingCartBox';
 import { ApiConfigProvider } from '../context/ApiConfigContext';
@@ -13,7 +13,7 @@ import { ApiConfigProvider } from '../context/ApiConfigContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'okayokay',
+  title: 'myshop',
   description: 'Generated e-commerce website',
 };
 
@@ -29,8 +29,8 @@ export default function RootLayout({
           <LanguageProvider>
             <ThemeProvider>
               <CartProvider>
-                <ApiConfigProvider apiId={5}>
-                  <Navbar5 />
+                <ApiConfigProvider apiId={1}>
+                  <Navbar1 />
                   {children}
                   <Footer1 />
                   <FloatingCartBox />

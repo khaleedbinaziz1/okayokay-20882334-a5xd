@@ -1,7 +1,7 @@
 'use client';
 import React, { Suspense, useRef, useState } from 'react';
 import Hero1 from '../components/Hero/Hero1';
-import TopCategories3 from '../components/TopCategories/TopCategories3';
+import TopCategories1 from '../components/TopCategories/TopCategories1';
 import ProductSection1 from '../components/ProductSection/ProductSection1';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <main>
         <Hero1 />
         
-        <TopCategories3 onCategoryClick={handleCategoryBannerClick} />
+        <TopCategories1 onCategoryClick={handleCategoryBannerClick} />
         
         <Suspense fallback={<div>Loading products...</div>}>
           <ProductSection1

@@ -1,4 +1,4 @@
-# okayokay
+# myshop
 
 This is a generated e-commerce website built with Next.js and Tailwind CSS.
 

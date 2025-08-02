@@ -32,7 +32,7 @@ const normalizeString = (str: string): string => {
     .trim();
 };
 
-const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
+const Navbar1 = ({ phoneNumber = "+12324323423" }: { phoneNumber?: string }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoadingCategories, setIsLoadingCategories] = useState(false);
@@ -175,7 +175,7 @@ const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
   };
 
   return (
-    <header className="bg-secondary sticky top-0 z-40">
+    <header className="bg-gradient-to-r from-primary via-primary to-secondary sticky top-0 z-40 shadow-xl border-b-2 border-primary">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-16 lg:h-20 gap-2 sm:gap-4">
           {/* Logo */}
@@ -195,8 +195,8 @@ const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
           </Link>
 
           {/* Desktop Searchbar */}
-          <div className="relative rounded-md w-full max-w-xl mx-4 hidden lg:block" ref={searchWrapperRef}>
-            <div className="flex items-center bg-white shadow-md focus-within:ring-2 focus-within:ring-primary transition-all">
+          <div className="relative w-full max-w-xl mx-4 hidden lg:block" ref={searchWrapperRef}>
+            <div className="flex items-center bg-white border-2 border-primary shadow-md focus-within:ring-2 focus-within:ring-primary transition-all">
               <input
                 ref={inputRef}
                 type="text"
@@ -304,15 +304,15 @@ const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
       {/* Mobile Sidebar */}
       <aside
         ref={sidebarRef}
-        className={`fixed inset-y-0 left-0 w-80 max-w-[90vw] bg-white shadow-2xl transform transition-all duration-300 z-50 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed inset-y-0 left-0 w-80 max-w-[90vw] bg-white shadow-2xl transform transition-all duration-300 z-50 border-r-2 border-primary ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="flex items-center justify-between p-5 bg-gradient-to-r from-primary via-primary to-secondary">
+        <div className="flex items-center justify-between p-5 border-b border-primary bg-gradient-to-r from-primary via-primary to-secondary">
           <span className="text-lg font-bold text-white">Menu</span>
           <button onClick={toggleSidebar} className="text-white text-2xl font-bold">×</button>
         </div>
 
         {/* Mobile Categories */}
-        <div className="p-5">
+        <div className="p-5 border-b border-primary">
           <h3 className="text-base font-semibold text-primary mb-3 flex items-center gap-2">
             <span className="w-1 h-6 bg-primary block" />
             Categories
@@ -325,7 +325,13 @@ const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
             <ul className="space-y-2">
               {categories.map((cat) => (
                 <li key={cat._id} className="flex items-center gap-3 p-2 hover:bg-primary/10 cursor-pointer transition-colors" onClick={() => { router.push(`/category/${cat._id}`); toggleSidebar(); }}>
-                  <Image src={cat.img} alt={cat.name} width={28} height={28} />
+                  <Image 
+                    src={cat.img && cat.img.trim() !== '' ? cat.img : '/placeholder.png'} 
+                    alt={cat.name} 
+                    width={28} 
+                    height={28} 
+                    className="border border-gray-200" 
+                  />
                   <span className="text-sm font-medium text-gray-800">{cat.name}</span>
                 </li>
               ))}
@@ -348,4 +354,4 @@ const Navbar5 = ({ phoneNumber = "+1234234234" }: { phoneNumber?: string }) => {
   );
 };
 
-export default Navbar5;
+export default Navbar1;
