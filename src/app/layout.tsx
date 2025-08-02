@@ -13,7 +13,7 @@ import { ApiConfigProvider } from '../context/ApiConfigContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'myshop',
+  title: 'okayhsop',
   description: 'Generated e-commerce website',
 };
 
